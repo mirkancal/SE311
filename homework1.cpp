@@ -10,6 +10,6 @@ class CompositeMultiplyNode : public CompositeBinaryNode{};
 class CompositeDivideNode : public CompositeBinaryNode{};
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Fuck HW1" << std::endl;
     return 0;
 }
