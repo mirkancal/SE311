@@ -37,26 +37,32 @@ class Composite: public Component
     void traverse()
     {
         for (int i = 0; i < children.size(); i++)
-        // 5. Use polymorphism to delegate to children
           children[i]->traverse();
     }
 };
 
 int main()
 {
-  Composite containers;
 
+    Leaf *root = new Leaf("expression");
+    Leaf *expr_left = new Leaf("expression");
+    Leaf *term_left = new Leaf("term");
+    Leaf *const_left = new Leaf("5");
+    Leaf *term = new Leaf("-");
+    Leaf *right_right_term = new Leaf("term");
+    Leaf *right_left_const = new Leaf("4");
+    Leaf *right_term= new Leaf("/");
+    Leaf *right_right_const = new Leaf("2");
 
-      containers.add(new Leaf("5"));
-      containers.add(new Leaf("-"));
-      containers.add(new Leaf("4"));
-      containers.add(new Leaf("/"));
-      containers.add(new Leaf("2"));
+      Composite containers;
 
+      containers.add(const_left);
+      containers.add(term);
+      containers.add(right_left_const);
+      containers.add(right_term);
+      containers.add(right_right_const);
 
-
-
-    containers.traverse();
-    cout << endl;
+      containers.traverse();
+      cout << endl;
 
 }
